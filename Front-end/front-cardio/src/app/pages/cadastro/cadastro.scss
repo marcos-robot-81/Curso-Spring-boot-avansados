@@ -1,0 +1,118 @@
+// Variáveis de cor (Tema Cardio)
+$primary: #e63946;
+$primary-dark: #b91c1c;
+$bg-page: #f8fafc;
+$bg-card: #ffffff;
+$text-main: #1e293b;
+$text-muted: #64748b;
+$border: #cbd5e1;
+$radius: 8px;
+
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: $bg-page;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.cadastro-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.card {
+  background: $bg-card;
+  padding: 2.5rem;
+  border-radius: $radius;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  width: 100%;
+  max-width: 500px;
+
+  h2 {
+    color: $primary;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  
+  .form-group {
+    flex: 1;
+    
+    &.small {
+      flex: 0 0 80px; // Largura fixa para campos pequenos como Número
+    }
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+
+  label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: $text-main;
+  }
+
+  input, select {
+    padding: 0.75rem;
+    border: 1px solid $border;
+    border-radius: $radius;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+
+    &:focus {
+      outline: none;
+      border-color: $primary;
+      box-shadow: 0 0 0 3px rgba($primary, 0.15);
+    }
+
+    &::placeholder {
+      color: #94a3b8;
+    }
+  }
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.85rem;
+  background-color: $primary;
+  color: white;
+  border: none;
+  border-radius: $radius;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: $primary-dark;
+  }
+}
+
+.mensagem {
+  padding: 0.75rem;
+  border-radius: $radius;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  background-color: #e2e8f0; // Padrão
+
+  &.erro { background-color: #fee2e2; color: #991b1b; }
+  &.sucesso { background-color: #dcfce7; color: #166534; }
+}

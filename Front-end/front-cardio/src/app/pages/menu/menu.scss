@@ -1,0 +1,84 @@
+// Variáveis (Mesmas do Cadastro)
+$primary: #e63946;
+$primary-dark: #b91c1c;
+$text-white: #ffffff;
+$shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+:host {
+  display: block;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+#menu {
+  display: flex;
+  justify-content: space-between; // Separa Navegação (Esq) e Loga (Dir)
+  align-items: center;
+  background-color: $primary;
+  padding: 0 2rem;
+  height: 60px;
+  box-shadow: $shadow;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1rem; // Espaço entre os itens
+}
+
+li {
+  display: flex;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: $text-white;
+  }
+
+  &.active {
+    background-color: $primary-dark;
+    color: $text-white;
+    font-weight: 700;
+  }
+}
+
+// Estilo específico para a área de Login (#Loga)
+#Loga {
+  // O separador "/"
+  li:nth-child(2) a {
+    pointer-events: none; // Não clicável
+    padding: 0 0.2rem;
+    opacity: 0.6;
+  }
+
+  // Botão de "Loga" com destaque
+  li:last-child a {
+    background-color: $text-white;
+    color: $primary;
+    font-weight: 700;
+    border: 1px solid $text-white;
+
+    &:hover {
+      background-color: $primary-dark;
+      color: $text-white;
+      border-color: $primary-dark;
+    }
+  }
+}

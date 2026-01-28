@@ -1,0 +1,14 @@
+FROM node:20
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 4200
+
+# Inicia o Angular permitindo acesso externo (0.0.0.0)
+CMD ["npm", "start", "--", "--host", "0.0.0.0"]
