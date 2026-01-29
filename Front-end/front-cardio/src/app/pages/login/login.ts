@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class Login {
   private http = inject(HttpClient);
   private router = inject(Router);
+  private token = " Vazil";
 
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -31,6 +32,7 @@ export class Login {
       next: (resposta: any) => {
         this.mensagem = 'Login realizado com sucesso!';
         console.log('Token recebido:', resposta);
+        this.token = resposta;
         
         // Redireciona para a home após 1 segundo
         setTimeout(() => {
@@ -42,5 +44,6 @@ export class Login {
         this.mensagem = 'Erro: E-mail ou senha inválidos.';
       }
     });
+    console.log(this.token);
   }
 }

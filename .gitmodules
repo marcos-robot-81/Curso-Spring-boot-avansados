@@ -1,0 +1,3 @@
+[submodule "curso-spring-avancado"]
+	path = curso-spring-avancado
+	url = https://github.com/alexandresjunior/curso-spring-avancado.git
